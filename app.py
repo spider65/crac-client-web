@@ -15,7 +15,7 @@ from crac_client_web.converter.roof_converter import RoofConverter
 from crac_client_web.converter.telescope_converter import TelescopeConverter
 from crac_client_web.converter.weather_converter import WeatherConverter
 from crac_client_web.gui_constants import GuiKey
-from crac_client_web.jobs import JOBS  /home/raniero/Documenti/GitHub/crac-client-web/jobs.py /home/raniero/Documenti/GitHub/crac-client/crac_client/jobs.py
+from crac_client_web.jobs import JOBS 
 from crac_client_web.retriever.button_retriever import ButtonRetriever
 from crac_client_web.retriever.curtains_retriever import CurtainsRetriever
 from crac_client_web.retriever.roof_retriever import RoofRetriever
