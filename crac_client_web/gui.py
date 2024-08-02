@@ -88,7 +88,7 @@ def index():
             result = function_alim_tele({button_id}) #CHIAMATA DA SISTEMARE
         elif button_id == 'btn_power_telescope':
             result = function_alim_tele({button_id}) #CHIAMATA DA SISTEMARE
-            
+    #in data i value dovranno essere sostituiti con i valori ricevuti da protobuf       
     data = {
         'items':[
             {'id':'lbl_altezza_tenda_est', 'name':'altezza_tenda est','value':35},
