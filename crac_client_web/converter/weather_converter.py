@@ -14,7 +14,7 @@ from crac_protobuf.chart_pb2 import (
 
 logger = logging.getLogger(__name__)
 
-
+#La classe WeatherConverter necessita di tutti i cambiamenti necessari per passare i dati presenti nel file ini relattivi ai parametri di alert e alarm dei gauges 
 class WeatherConverter(Converter):
     def convert(self, response: WeatherResponse, g_ui: Gui):
         logger.debug("weathter_converter")
