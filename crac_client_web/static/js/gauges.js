@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 valueBoxBorderRadius: 0,
                 colorValueBoxRect: "#222",
                 colorValueBoxRectEnd: "#333",
-                value : gaugeDataMap['temperature-gauge'] || 0,
+                value : gaugeDataMap["temperature-gauge"] || 0,
                 titleText: "indicatore della temperatura esterna attuale"
             }
         },
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 valueBoxBorderRadius: 0,
                 colorValueBoxRect: "#222",
                 colorValueBoxRectEnd: "#333",
-                value: gaugeDataMap['humidity-gauge'] || 0,
+                value: gaugeDataMap["humidity-gauge"] || 0,
                 titleText: "indicatore della percentuale di umidità relativa attuale"
             }
         },
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 valueBoxBorderRadius: 2,
                 colorValueBoxRect: "#222",
                 colorValueBoxRectEnd: "#333",
-                value: gaugeDataMap['wind-gauge'] || 0,
+                value: gaugeDataMap["wind-gauge"] || 0,
                 titleText: "indicatore della velocità del vento"
             }
         },
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 valueBoxBorderRadius: 2,
                 colorValueBoxRect: "#222",
                 colorValueBoxRectEnd: "#333",
-                value: gaugeDataMap['guest-wind-gauge'] || 0,
+                value: gaugeDataMap["guest-wind-gauge"] || 0,
                 titleText: "indicatore della velocità delle raffiche di vento"
             }
         },
@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 valueBoxBorderRadius: 0,
                 colorValueBoxRect: "#222",
                 colorValueBoxRectEnd: "#333",
-                value: gaugeDataMap['barometer-gauge'] || 0,
+                value: gaugeDataMap["barometer-gauge"] || 0,
                 titleText: "indicatore della pressione atmosferica attuale"
             }
         },
@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 valueBoxBorderRadius: 0,
                 colorValueBoxRect: "#222",
                 colorValueBoxRectEnd: "#333",
-                value: gaugeDataMap['rain-gauge'] || 0,
+                value: gaugeDataMap["rain-gauge"] || 0,
                 titleText: "indicatore del livello di pioggia"
             }
         }

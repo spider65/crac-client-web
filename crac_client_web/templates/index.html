@@ -173,6 +173,14 @@
         </div>
         <p></p>
         <div class="border-with-text-ext" data-text="Dati Meteo" style="display: block; margin: 0 auto; text-align: center;">
+                <div class = 'container'>
+                    <div class="border-with-text" data-text="" padding="1px 1px">
+                        <p>Tendenza Barometro (3 ore): {{items|get_value('barometer-trend')}} mmbar</p> 
+                    </div>
+                    <div class="border-with-text" data-text="" padding="1px 1px">
+                        <p> Previsioni: {{items|get_value('barometer-trend-forecast')}}</p>
+                    </div>
+                </div>
             <div class="container">
                 <canvas id="temperature-gauge"></canvas>
                 <canvas id="humidity-gauge"></canvas>
@@ -183,7 +191,8 @@
                 <script src="//cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/radial/gauge.min.js"></script>    
                 <script src="/static/js/gauges.js"></script>
             </div>
-            <label title="indica lo stato delle condizioni meteo" id="cond_meteo" style="display: block; margin: 0 auto; text-align: center;" class="status-label">Condizioni meteo non conosiute </label>    
+            <p></p>
+            <label title="indica lo stato delle condizioni meteo" id="cond_meteo" style="display: block; margin: 0 auto; text-align: center;" class="status-label">Condizioni meteo non conosciute </label>    
         </div>
                    
         </div>
