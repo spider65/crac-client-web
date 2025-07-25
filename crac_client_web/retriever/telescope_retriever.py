@@ -17,6 +17,7 @@ class TelescopeRetriever(Retriever):
         super().__init__(converter)
         self.channel = grpc.insecure_channel(f'{Config.getValue("ip", "server")}:{Config.getValue("port", "server")}')
         self.client = TelescopeStub(self.channel)
+        print(f"questo è {self.client}")
 
     key_to_telescope_action_conversion = (
         ButtonKey.KEY_SYNC,
