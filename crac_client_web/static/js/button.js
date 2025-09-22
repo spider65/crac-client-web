@@ -89,22 +89,22 @@ export function initButtonCommands(socket) {
 }
 
 ///function sendButtonCommand(socket, buttonKey) {
-function sendButtonCommand(buttonKey) {
-    //const request = new ButtonRequest();
-    const request = proto.ButtonRequest.create({
-        action: proto.ButtonAction.BUTTON_DEFAULT_ACTION,
-        type: 0, // opzionale, se non usi ButtonType
+function sendButtonCommand(socket, buttonKey) {
+    // Crea la richiesta usando il bundle
+    const request = proto.crac_protobuf.ButtonRequest.create({
+        action: proto.crac_protobuf.ButtonAction.BUTTON_DEFAULT_ACTION,
+        type: 0, // opzionale
         key: buttonKey
     });
-    //request.setAction(ButtonAction.BUTTON_DEFAULT_ACTION);
-    //request.setType(0); // opzionale, se non usi ButtonType
-    //request.setKey(buttonKey);
 
-    //const bytes = request.serializeBinary();
-    //socket.send(bytes);
-    //console.log(`📤 Inviato comando button: ${ButtonKey[buttonKey]} (${buttonKey})`);
-    const bytes = proto.ButtonRequest.encode(request).finish();
-    sendBuffer(bytes);
-    console.log(`📤 Inviato comando button: ${proto.ButtonKey[buttonKey]} (${buttonKey})`);
+    // Serializza la richiesta
+    const bytes = proto.crac_protobuf.ButtonRequest.encode(request).finish();
+
+    // Invia tramite WebSocket
+    socket.send(bytes);
+
+    // Log di debug
+    console.log(`📤 Inviato comando button: ${proto.crac_protobuf.ButtonKey?.[buttonKey] ?? buttonKey} (${buttonKey})`);
 }
+
 

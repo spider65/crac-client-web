@@ -4,11 +4,15 @@ import configparser
 import asyncio
 import logging
 import grpc
-#PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#PROTOBUF_PATH = os.path.join(PROJECT_ROOT, "crac-protobuf")
-#sys.path.append(PROTOBUF_PATH)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROTOBUF_PATH = os.path.join(PROJECT_ROOT, "GitHub")
+sys.path.append(PROTOBUF_PATH)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+config_path = os.path.join(BASE_DIR, "config.ini")
+print("Config path:", config_path)
 
-#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+#sys.path.append("/home/raniero/Docmenti/GitHub/crac-protobuf")
 #sys.path.append(os.path.abspath(os.path.join(BASE_DIR, "..", "..", "crac-protobuf")))
 
 #sys.path.insert(0, "/home/raniero/Documenti/GitHub")
@@ -28,9 +32,13 @@ logging.basicConfig(level=logging.INFO)
 # === Lettura config.ini ===
 config = configparser.ConfigParser()
 config.read("config.ini")
+c= config.read(config_path)
+print("questo è config.read", c )
+print("Config sections:", config.sections())
 grpc_ip = config["server"]["ip"]
 grpc_port = config["server"]["port"]
 grpc_target = f"{grpc_ip}:{grpc_port}"
+print("gRPC target:", grpc_target)
 
 host = config["web_gui"]["host"]
 port = config["web_gui"]["port"]
@@ -52,7 +60,7 @@ app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), na
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
 # === Startup: connessione gRPC e task di polling ===
-'''
+
 @app.on_event("startup")
 async def startup_event():
     global grpc_channel, telescope_stub
@@ -60,7 +68,7 @@ async def startup_event():
     grpc_channel = grpc.aio.insecure_channel(grpc_target)
     telescope_stub = TelescopeStub(grpc_channel)
     asyncio.create_task(poll_telescope())
-'''
+
 @app.on_event("startup")
 async def startup_event():
     """Avvia il polling del telescopio all'avvio dell'app"""

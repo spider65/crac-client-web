@@ -7,15 +7,16 @@ license = "GPL3"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-crac-protobuf = { git = "https://github.com/ara-astronomia/crac-protobuf", tag="0.1.21.0" }
+crac-protobuf = { git = "https://github.com/ara-astronomia/crac-protobuf", branch="test_proto_web"}
 grpcio-tools = "^1.43.0"
 Flask = "^2.0.3"
 opencv-python = "^4.5.5"
 python-dotenv = "^0.20.0"
 plotly = "^5.7.0"
 kaleido = "0.2.1"
-#PySimpleGUI = "^4.60.4"
 uvicorn = {extras = ["standard"], version = "^0.34.3"}
+#crac-protobuf = {path = "../crac-protobuf", develop = true}
+fastapi = "^0.117.1"
 
 
 [tool.poetry.dev-dependencies]
